@@ -1,0 +1,18 @@
+<h2>Editar Tarea</h2>
+
+<div class="dialog-content">
+  <mat-form-field class="full-width">
+    <mat-label>Título</mat-label>
+    <input matInput [(ngModel)]="tarea.titulo">
+  </mat-form-field>
+
+  <mat-form-field class="full-width">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput [(ngModel)]="tarea.descripcion"></textarea>
+  </mat-form-field>
+</div>
+
+<div class="dialog-actions">
+  <button mat-button (click)="cancelar()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="guardar()">Guardar</button>
+</div>

@@ -1,0 +1,38 @@
+.tareas-container {
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .tarea-form {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  
+  .tareas-list mat-list-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .tarea-titulo {
+    font-weight: bold;
+  }
+  
+  .tarea-desc {
+    font-style: italic;
+    margin-left: 10px;
+  }
+  
+  .tarea-fecha {
+    font-size: 0.8em;
+    color: gray;
+    margin-left: 10px;
+  }
+  

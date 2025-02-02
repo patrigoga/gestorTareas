@@ -1,0 +1,17 @@
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 10px;
+  }
+  
+  .full-width {
+    width: 100%;
+  }
+  

@@ -27,6 +27,10 @@ export class TareaService {
     return this.http.post<Tarea>(this.apiUrl, tarea);
   }
 
+  updateTarea(tarea: Tarea): Observable<Tarea> {
+    return this.http.put<Tarea>(`${this.apiUrl}/${tarea.id}`, tarea);
+  }
+
   deleteTarea(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }

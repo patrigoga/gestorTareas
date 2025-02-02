@@ -1,0 +1,68 @@
+<div class="tareas-container">
+    <h2>Gestión de Tareas</h2>
+
+    <!-- Formulario para agregar una nueva tarea -->
+    <mat-card class="tarea-form">
+        <mat-card-content>
+            <mat-form-field class="full-width">
+                <mat-label>Título</mat-label>
+                <input matInput [(ngModel)]="nuevaTarea.titulo">
+            </mat-form-field>
+
+            <mat-form-field class="full-width">
+                <mat-label>Descripción</mat-label>
+                <textarea matInput
+                    [(ngModel)]="nuevaTarea.descripcion"></textarea>
+            </mat-form-field>
+
+            <button mat-raised-button color="primary"
+                (click)="agregarTarea()">Agregar Tarea</button>
+        </mat-card-content>
+    </mat-card>
+
+    <div>
+          <!-- Campo de búsqueda -->
+    <mat-card class="tarea-form" *ngIf="tareas.length > 0">
+        <mat-list>
+            <mat-form-field class="full-width">
+                <mat-label>Buscar tarea</mat-label>
+                <input matInput [(ngModel)]="filtro" placeholder="Escribe aquí">
+            </mat-form-field>
+        </mat-list>
+    </mat-card>
+    </div>
+
+    <!-- Lista de tareas con filtro -->
+    <mat-card class="tareas-list" *ngIf="tareas.length > 0">
+        <mat-list>
+            <mat-list-item *ngFor="let tarea of tareas | filterTareas: filtro">
+                <mat-checkbox [(ngModel)]="tarea.completada"
+                    (change)="actualizarTarea(tarea)">
+                </mat-checkbox>
+
+                <span class="tarea-titulo">{{ tarea.titulo }}</span> -
+                <span class="tarea-desc">{{ tarea.descripcion }}</span>
+                <span class="tarea-fecha" *ngIf="tarea.fechaCreacion">({{
+                    tarea.fechaCreacion | date:'short' }})</span>
+
+                <button mat-icon-button color="primary"
+                    (click)="editarTarea(tarea)">
+                    <mat-icon>edit</mat-icon>
+                </button>
+
+                <button mat-icon-button color="warn"
+                    (click)="eliminarTarea(tarea.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </mat-list-item>
+        </mat-list>
+    </mat-card>
+
+  
+
+            <p *ngIf="tareas.length === 0" class="mensaje-vacio">No hay tareas
+                disponibles.</p>
+   
+    <!-- Formulario para editar una tarea -->
+
+</div>
